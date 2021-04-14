@@ -2,18 +2,19 @@ import React from 'react';
 
 import TeamMembers from '../components/TeamMembers';
 import RegisterForm from '../components/RegisterForm';
+import { MemberCointainer, RegisterContainer } from '../theme/layout';
 
 const SignUpScreen = () => {
   return (
-    <section>
-      <div>
+    <>
+      <MemberCointainer>
         <h1>Join the team</h1>
         <TeamMembers />
-      </div>
-      <div>
+      </MemberCointainer>
+      <RegisterContainer>
         <RegisterForm />
-      </div>
-    </section>
+      </RegisterContainer>
+    </>
   );
 };
 export default SignUpScreen;
