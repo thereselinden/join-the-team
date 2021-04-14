@@ -1,11 +1,9 @@
 import React from 'react';
 
+import SignUpScreen from './screen/SignUpScreen';
+
 const App = () => {
-  return (
-    <div>
-      <p>Hello there</p>
-    </div>
-  );
+  return <SignUpScreen />;
 };
 
 export default App;
