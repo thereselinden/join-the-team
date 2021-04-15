@@ -1,15 +1,26 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
-const Button = ({ button, onClick, disabled, className, text }) => {
+const CustomButton = ({
+  button,
+  onClick,
+  disabled,
+  className,
+  variant,
+  color,
+  text,
+}) => {
   return (
-    <button
+    <Button
       type={button}
       onClick={onClick}
       disabled={disabled}
       className={className}
+      variant={variant}
+      color={color}
     >
       {text}
-    </button>
+    </Button>
   );
 };
-export default Button;
+export default CustomButton;

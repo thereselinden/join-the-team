@@ -35,7 +35,7 @@ const SignUpScreen = () => {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={4} className={classes.members}>
-          <Typography variant="h1" className={classes.title}>
+          <Typography variant="h2" className={classes.title} xs={22}>
             Join the Team
           </Typography>
           <TeamMembers />
@@ -45,15 +45,6 @@ const SignUpScreen = () => {
         </Grid>
       </Grid>
     </div>
-    // <>
-    //   <MemberCointainer>
-    //     <h1>Join the team</h1>
-    //     <TeamMembers />
-    //   </MemberCointainer>
-    //   <RegisterContainer>
-    //     <RegisterForm />
-    //   </RegisterContainer>
-    // </>
   );
 };
 export default SignUpScreen;
