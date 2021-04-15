@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+
 import Checkbox from '@material-ui/core/Checkbox';
-import Typography from '@material-ui/core/Typography';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const CustomCheckbox = () => {
   const [checked, setChecked] = useState(false);
@@ -9,19 +10,15 @@ const CustomCheckbox = () => {
   const handleChange = () => {
     setChecked(!checked);
   };
+
   return (
-    <div>
-      <Checkbox
-        checked={checked}
-        onChange={handleChange}
-        color="primary"
-        id="agreeTerms"
-      />
-      {/* <input type="checkbox" id="agreeTerms" name="agreeTerms" value="terms" /> */}
-      <Typography variant="body1">
-        <label htmlFor="agreeTerms">I agree to the terms</label>
-      </Typography>
-    </div>
+    <FormControlLabel
+      checked={checked}
+      onChange={handleChange}
+      control={<Checkbox color="primary" />}
+      label="I agree to the terms"
+      labelPlacement="end"
+    />
   );
 };
 export default CustomCheckbox;
