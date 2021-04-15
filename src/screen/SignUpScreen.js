@@ -1,20 +1,59 @@
 import React from 'react';
 
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+
 import TeamMembers from '../components/TeamMembers';
 import RegisterForm from '../components/RegisterForm';
-import { MemberCointainer, RegisterContainer } from '../theme/layout';
+
+import colors from '../theme/colors.json';
+import backgroundImage from '../assets/background.svg';
+import Typography from '@material-ui/core/Typography';
+
+const useStyles = makeStyles(() => ({
+  root: {
+    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  members: {
+    backgroundImage: `url(${backgroundImage})`,
+    background: colors.primaryBackground.color,
+  },
+  title: {
+    color: colors.primary.color,
+    margin: 0,
+    textAlign: 'center',
+  },
+  register: {},
+}));
 
 const SignUpScreen = () => {
+  const classes = useStyles();
+
   return (
-    <>
-      <MemberCointainer>
-        <h1>Join the team</h1>
-        <TeamMembers />
-      </MemberCointainer>
-      <RegisterContainer>
-        <RegisterForm />
-      </RegisterContainer>
-    </>
+    <div className={classes.root}>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={4} className={classes.members}>
+          <Typography variant="h1" className={classes.title}>
+            Join the Team
+          </Typography>
+          <TeamMembers />
+        </Grid>
+        <Grid item xs={12} sm={8} className={classes.register}>
+          <RegisterForm />
+        </Grid>
+      </Grid>
+    </div>
+    // <>
+    //   <MemberCointainer>
+    //     <h1>Join the team</h1>
+    //     <TeamMembers />
+    //   </MemberCointainer>
+    //   <RegisterContainer>
+    //     <RegisterForm />
+    //   </RegisterContainer>
+    // </>
   );
 };
 export default SignUpScreen;
