@@ -21,8 +21,6 @@ const useStyles = makeStyles(theme => ({
   },
   register: {
     display: 'flex',
-    //flexDirection: 'column',
-    //alignSelf: 'center',
     justifyContent: 'center',
   },
 }));

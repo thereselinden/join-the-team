@@ -9,8 +9,8 @@ import CustomButton from './Button';
 
 const useStyles = makeStyles(() => ({
   form: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: 'grid',
+    gridRowGap: 10,
   },
 }));
 
