@@ -8,6 +8,8 @@ import colors from '../theme/colors.json';
 const useStyles = makeStyles(theme => ({
   teamWrapper: {
     color: colors.primary.color,
+    display: 'grid',
+    gridRowGap: 10,
     alignSelf: 'center',
   },
   title: {
@@ -16,6 +18,14 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       display: 'table-caption',
     },
+  },
+  team: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  paragraph: {
+    width: 120,
   },
 }));
 
@@ -34,16 +44,18 @@ const TeamMembers = () => {
   }, []);
 
   return (
-    <div className={classes.teamWrapper}>
+    <section className={classes.teamWrapper}>
       <Typography variant="h2" className={classes.title}>
         Join the team
       </Typography>
-      {teamMembers.map(teamMember => (
-        <Typography variant="body1">
-          <li key={teamMember}>{teamMember}</li>
-        </Typography>
-      ))}
-    </div>
+      <div className={classes.team}>
+        {teamMembers.map(teamMember => (
+          <Typography variant="body1" className={classes.paragraph}>
+            <li key={teamMember}>{teamMember}</li>
+          </Typography>
+        ))}
+      </div>
+    </section>
   );
 };
 export default TeamMembers;

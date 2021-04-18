@@ -18,6 +18,7 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${backgroundImage})`,
     background: colors.primaryBackground.color,
     display: 'flex',
+    justifyContent: 'center',
   },
   register: {
     display: 'flex',

@@ -15,7 +15,11 @@ const useStyles = makeStyles(theme => ({
     },
   },
   subTitle: {
-    fontSize: 25,
+    fontSize: 18,
+    fontWeight: 'bold',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: 25,
+    },
   },
   paragraph: {
     color: 'rgba(0,0,0,.6)',
