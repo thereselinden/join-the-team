@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const useInput = initialValues => {
   const [values, setValues] = useState(initialValues);
-  //console.log(values);
+
   return [
     values, //returning the values
     e => {

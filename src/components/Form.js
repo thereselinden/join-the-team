@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 
+import { teamMembers } from '../redux/members';
 import useInput from '../hooks/useInput';
 import CustomCheckbox from './Checkbox';
 import CustomButton from './Button';
@@ -8,16 +10,15 @@ import { useFormStyles } from '../theme/style';
 
 const Form = () => {
   const classes = useFormStyles();
+  const dispatch = useDispatch();
   const [values, handleChange] = useInput({ name: '', email: '' });
-  const [formSubmit, setFormSubmit] = useState(false); //to prevent printing the names before button clicked
-  console.log(formSubmit);
 
   const handleSubmitForm = e => {
     e.preventDefault();
+    dispatch(teamMembers.actions.setNewTeamMember({ name: values.name }));
     console.log('form submitted');
     values.name = '';
     values.email = '';
-    setFormSubmit(true);
   };
 
   //Do I need an onSubmit on the form?
@@ -51,7 +52,6 @@ const Form = () => {
         variant="contained"
         color="primary"
       />
-      {formSubmit && values.name}
     </form>
   );
 };
