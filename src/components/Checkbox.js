@@ -5,7 +5,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const CustomCheckbox = () => {
   const [checked, setChecked] = useState(false);
-  console.log('checkbox', checked);
 
   const handleChange = () => {
     setChecked(!checked);
