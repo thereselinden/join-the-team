@@ -1,33 +1,12 @@
 import React from 'react';
-
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import TeamMembers from '../components/TeamMembers';
 import Register from '../components/Register';
-
-import colors from '../theme/colors.json';
-import backgroundImage from '../assets/background.svg';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    height: '100vh',
-    display: 'flex',
-  },
-  members: {
-    backgroundImage: `url(${backgroundImage})`,
-    background: colors.primaryBackground.color,
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  register: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-}));
+import { useSignUpScreenStyles } from '../theme/style';
 
 const SignUpScreen = () => {
-  const classes = useStyles();
+  const classes = useSignUpScreenStyles();
 
   return (
     <section className={classes.root}>

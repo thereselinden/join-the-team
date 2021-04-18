@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
-
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 
 import useInput from '../hooks/useInput';
 import CustomCheckbox from './Checkbox';
 import CustomButton from './Button';
-
-const useStyles = makeStyles(() => ({
-  form: {
-    display: 'grid',
-    gridRowGap: 10,
-  },
-}));
+import { useFormStyles } from '../theme/style';
 
 const Form = () => {
-  const classes = useStyles();
+  const classes = useFormStyles();
   const [values, handleChange] = useInput({ name: '', email: '' });
   const [formSubmit, setFormSubmit] = useState(false); //to prevent printing the names before button clicked
   console.log(formSubmit);

@@ -1,36 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 import { teamURL } from '../url';
-import colors from '../theme/colors.json';
-
-const useStyles = makeStyles(theme => ({
-  teamWrapper: {
-    color: colors.primary.color,
-    display: 'grid',
-    gridRowGap: 10,
-    alignSelf: 'center',
-  },
-  title: {
-    color: colors.primary.color,
-    textAlign: 'center',
-    [theme.breakpoints.up('sm')]: {
-      display: 'table-caption',
-    },
-  },
-  team: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  paragraph: {
-    width: 120,
-  },
-}));
+import { useTeamMembersStyles } from '../theme/style';
 
 const TeamMembers = () => {
-  const classes = useStyles();
+  const classes = useTeamMembersStyles();
 
   const [teamMembers, setTeamMembers] = useState([]);
   console.log(teamMembers);

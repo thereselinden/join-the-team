@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-//custom hook
-
 const useInput = initialValues => {
   const [values, setValues] = useState(initialValues);
   //console.log(values);

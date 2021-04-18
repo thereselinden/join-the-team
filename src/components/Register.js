@@ -1,33 +1,11 @@
 import React from 'react';
-
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Form from './Form';
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    width: '100%',
-    display: 'grid',
-    gridRowGap: 10,
-    [theme.breakpoints.up('sm')]: {
-      width: '60%',
-      alignSelf: 'center',
-    },
-  },
-  subTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: 25,
-    },
-  },
-  paragraph: {
-    color: 'rgba(0,0,0,.6)',
-  },
-}));
+import Form from './Form';
+import { useRegisterStyles } from '../theme/style';
 
 const Register = () => {
-  const classes = useStyles();
+  const classes = useRegisterStyles();
 
   return (
     <div className={classes.container}>
