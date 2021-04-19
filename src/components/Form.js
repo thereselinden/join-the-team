@@ -11,13 +11,15 @@ import { useFormStyles } from '../theme/style';
 const Form = () => {
   const classes = useFormStyles();
   const dispatch = useDispatch();
-  const [values, handleChange] = useInput({ name: '', email: '' });
+  const [values, handleChange, resetInputFields] = useInput({
+    name: '',
+    email: '',
+  });
 
   const handleSubmitForm = e => {
     e.preventDefault();
     dispatch(teamMembers.actions.addNewTeamMember({ name: values.name }));
-    values.name = '';
-    values.email = '';
+    resetInputFields();
   };
 
   return (

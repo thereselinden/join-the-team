@@ -3,15 +3,19 @@ import { useState } from 'react';
 const useInput = initialValues => {
   const [values, setValues] = useState(initialValues);
 
+  const reset = () => {
+    setValues(initialValues);
+  };
+
   return [
-    values, //returning the values
+    values,
     e => {
-      //returning an onchange function
       setValues({
-        ...values, //keep all the values in there
-        [e.target.name]: e.target.value, //based on the name of the input field we will update its value
+        ...values,
+        [e.target.name]: e.target.value,
       });
     },
+    reset,
   ];
 };
 export default useInput;
