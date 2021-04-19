@@ -15,7 +15,7 @@ const Register = () => {
       </Typography>
       <Typography variant="body1" className={classes.paragraph}>
         Together we re-define the experience of online gaming through
-        gamification and novel technical solutions
+        gamification and novel technical solutions.
       </Typography>
       <Form />
     </div>
