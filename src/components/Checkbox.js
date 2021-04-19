@@ -4,7 +4,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const CustomCheckbox = () => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
 
   const handleChange = () => {
     setChecked(!checked);
