@@ -30,6 +30,7 @@ export const useTeamMembersStyles = makeStyles(theme => ({
   title: {
     color: colors.primary.color,
     textAlign: 'center',
+    fontSize: 60,
     [theme.breakpoints.up('sm')]: {
       display: 'table-caption',
       width: 100,
@@ -54,6 +55,9 @@ export const useRegisterStyles = makeStyles(theme => ({
       width: '60%',
       alignSelf: 'center',
     },
+  },
+  title: {
+    fontSize: 48,
   },
   subTitle: {
     fontSize: 18,

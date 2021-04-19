@@ -17,7 +17,7 @@ const TeamMembers = () => {
 
   return (
     <section className={classes.teamWrapper}>
-      <Typography variant="h2" className={classes.title}>
+      <Typography variant="h1" className={classes.title}>
         Join the team
       </Typography>
       <div className={classes.team}>

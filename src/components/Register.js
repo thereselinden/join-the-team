@@ -9,8 +9,10 @@ const Register = () => {
 
   return (
     <div className={classes.container}>
-      <Typography variant="h3">Register</Typography>
-      <Typography variant="h4" className={classes.subTitle}>
+      <Typography variant="h2" className={classes.title}>
+        Register
+      </Typography>
+      <Typography variant="h3" className={classes.subTitle}>
         Team player - Be positive - Beat yesterday
       </Typography>
       <Typography variant="body1" className={classes.paragraph}>
