@@ -3,7 +3,7 @@ import { teamURL } from '../url';
 
 const initialState = {
   team: {
-    newMembers: [],
+    members: [],
   },
 };
 
@@ -11,32 +11,31 @@ export const teamMembers = createSlice({
   name: 'teamMembers',
   initialState: initialState,
   reducers: {
-    setNewTeamMember: (state, action) => {
+    setTeamMembers: (state, action) => {
+      const teamMembers = action.payload;
+      state.team.members = teamMembers;
+    },
+    addNewTeamMember: (state, action) => {
       const addTeamMember = action.payload;
-      console.log('reducer ', addTeamMember);
-      state.team.newMembers.push(addTeamMember);
+      state.team.members.push(addTeamMember.name);
     },
   },
 });
 
 export const getTeamMembers = () => {
-  console.log('in the getTeamMembers');
   return dispatch => {
-    console.log('after return dispatch');
     fetch(teamURL, {
       method: 'GET',
       headers: { 'content-type': 'application/json' },
     })
       .then(res => {
-        console.log('first then res');
         if (res.ok) {
           return res.json();
         }
         throw new Error('Could not get team members.');
       })
       .then(json => {
-        console.log('json', json);
-        dispatch(teamMembers.actions.setNewTeamMember(json.team));
+        dispatch(teamMembers.actions.setTeamMembers(json.team));
       })
       .catch(err => {
         console.log(err);

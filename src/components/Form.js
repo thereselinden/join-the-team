@@ -15,7 +15,7 @@ const Form = () => {
 
   const handleSubmitForm = e => {
     e.preventDefault();
-    dispatch(teamMembers.actions.setNewTeamMember({ name: values.name }));
+    dispatch(teamMembers.actions.addNewTeamMember({ name: values.name }));
     console.log('form submitted');
     values.name = '';
     values.email = '';
@@ -55,5 +55,4 @@ const Form = () => {
     </form>
   );
 };
-
 export default Form;
