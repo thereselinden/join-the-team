@@ -32,6 +32,7 @@ export const useTeamMembersStyles = makeStyles(theme => ({
     textAlign: 'center',
     [theme.breakpoints.up('sm')]: {
       display: 'table-caption',
+      width: 100,
     },
   },
   team: {
