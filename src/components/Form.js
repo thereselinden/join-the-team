@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 import { teamMembers } from '../redux/members';
 import useInput from '../hooks/useInput';
 import CustomCheckbox from './Checkbox';
-import CustomButton from './Button';
 import { useFormStyles } from '../theme/style';
 
 const Form = () => {
@@ -16,13 +16,10 @@ const Form = () => {
   const handleSubmitForm = e => {
     e.preventDefault();
     dispatch(teamMembers.actions.addNewTeamMember({ name: values.name }));
-    console.log('form submitted');
     values.name = '';
     values.email = '';
   };
 
-  //Do I need an onSubmit on the form?
-  //If I do, what do I need to have as an onClick on the button?
   return (
     <form onSubmit={handleSubmitForm} className={classes.form}>
       <TextField
@@ -44,14 +41,14 @@ const Form = () => {
         required
       />
       <CustomCheckbox />
-      <CustomButton
+      <Button
         type="submit"
-        onClick={handleSubmitForm}
-        text={'Im in, sign me up!'}
         disabled={!values.email || !values.name}
         variant="contained"
         color="primary"
-      />
+      >
+        I'm in, sign me up!
+      </Button>
     </form>
   );
 };
